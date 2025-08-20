@@ -7,9 +7,8 @@ function App() {
   const [effectiveRate, setEffectiveRate] = useState(0);
 
   return (
-    <div>
+    <div className = "app-container">
       {/* Inputs for income and deductions will go here */}
-
       <ResultDisplay
         taxableIncome={taxableIncome}
         estimatedTax={estimatedTax}
@@ -18,6 +17,5 @@ function App() {
     </div>
   );
 }
-
 export default App;
 
