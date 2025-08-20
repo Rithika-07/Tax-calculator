@@ -1,37 +1,24 @@
-import React from 'react';
+import { useState } from 'react';
 
-type Props = {
-    income : number;
-    setIncome: React.Dispatch<React.SetStateAction<number>>;
-    deductions:number;
-    setDeductions: React.Dispatch<React.SetStateAction<number>>;
-};
+export const IncomeDeductionsInput=() => {
+    const [income, setIncome] = useState<string>("");
+    const [deductions, setDeductions] = useState<string>("");
 
-const IncomeDeductionsInput: React.FC<Props>=({
-    income,
-    setIncome,
-    deductions,
-    setDeductions,
-
-}) => {
-   return (
+    return (
     <div className="form-group">
-          <label>Income:</label>
+        <label>Income:</label>
         <input
         type="number"
         value={income}
-        onChange={(e) => setIncome(Number(e.target.value))}
+        onChange={(e) => setIncome((e.target.value))}
         placeholder='Enter your income'/>
-
-         <label>Deductions:</label>
+      <label>Deductions:</label>
       <input
         type="number"
         value={deductions}
-        onChange={(e) => setDeductions(Number(e.target.value))}
+        onChange={(e) => setDeductions((e.target.value))}
         placeholder="Enter your deductions"
       />
-
     </div>
    )
 };
-export default IncomeDeductionsInput;
