@@ -1,35 +1,29 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import IncomeDeductionsInput from "./components/IncomeDeductionsInput.tsx";
+import FilingStatusSelect from "./components/FilingStatusSelect.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [income, setIncome] = useState<number>(0);
+  const [deductions, setDeductions] = useState<number>(0);
+  const [status, setStatus] = useState<string>("Indivudual");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+  
+      <div className ="input-container">
+        <h1>Tax Calculator</h1>
 
-export default App
+        <form className="tax-form">
+          <IncomeDeductionsInput
+          income ={income}
+          setIncome={setIncome}
+          deductions={deductions}
+          setDeductions={setDeductions}
+          />
+
+          <FilingStatusSelect status={status} setStatus={setStatus} />
+          </form>
+          </div>
+  );
+}
+export default App;
