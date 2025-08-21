@@ -2,7 +2,6 @@ import './App.css'
 import {FilingStatusSelect} from "./components/FilingStatusSelect.tsx";
 import { IncomeDeductionsInput } from './components/IncomeDeductionsInput.tsx';
 
-
 function App() {
   return (
       <div className ="input-container">
