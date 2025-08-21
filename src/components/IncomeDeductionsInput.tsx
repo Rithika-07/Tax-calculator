@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 export const IncomeDeductionsInput=() => {
-    const [income, setIncome] = useState<string>("");
-    const [deductions, setDeductions] = useState<string>("");
+    const [income, setIncome] = useState("");
+    const [deductions, setDeductions] = useState("");
 
     return (
     <div className="form-group">
@@ -19,6 +19,8 @@ export const IncomeDeductionsInput=() => {
         onChange={(e) => setDeductions((e.target.value))}
         placeholder="Enter your deductions"
       />
+
+
     </div>
    )
 };
